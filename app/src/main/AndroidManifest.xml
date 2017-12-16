@@ -56,7 +56,8 @@
         <activity android:name=".Activity.ListAllActivity" />
         <activity android:name=".Activity.MyPageActivity" />
         <activity android:name=".Activity.AddListActivity" />
-        <activity android:name=".Activity.InjungActivity"/>
+        <activity android:name=".Activity.InjungActivity" />
+        <activity android:name=".Activity.RankActivity" />
     </application>
 
 </manifest>

@@ -11,5 +11,6 @@ class CommentList {
     val writer = ""
     val check = 0
     val create_date = ""
+    val commentCount = 0
   }
 }

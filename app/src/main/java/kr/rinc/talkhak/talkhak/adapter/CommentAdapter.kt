@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import cn.pedant.SweetAlert.SweetAlertDialog
 import kotlinx.android.synthetic.main.recycler_comment.view.*
 import kr.rinc.talkhak.talkhak.Activity.BaseActivity
 import kr.rinc.talkhak.talkhak.R

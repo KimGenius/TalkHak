@@ -22,6 +22,9 @@ class MainActivity : BaseActivity() {
     user.setOnClickListener {
       IntentUtil.moveActivity(this@MainActivity, MyPageActivity::class.java)
     }
+    qRank.setOnClickListener {
+      IntentUtil.moveActivity(this@MainActivity, RankActivity::class.java)
+    }
   }
 
   fun setImage() {
