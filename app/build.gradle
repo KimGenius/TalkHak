@@ -31,4 +31,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.facebook.android:facebook-login:[4,5)'
+    // 카카오 로그인 sdk를 사용하기 위해 필요.
+    implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
+    // push sdk를 사용하기 위해 필요.
+    implementation group: project.KAKAO_SDK_GROUP, name: 'push', version: project.KAKAO_SDK_VERSION
+
 }
