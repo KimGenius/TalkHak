@@ -19,7 +19,6 @@ import inc.r.ens.util.ToastUtil
 import kr.rinc.talkhak.talkhak.kakao.KakaoSignupActivity
 import kr.rinc.talkhak.talkhak.network.RetroInit
 import kr.rinc.talkhak.talkhak.util.SharedUtil
-import okhttp3.Callback
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
@@ -66,6 +65,7 @@ class LoginActivity : BaseActivity() {
 
   fun setImage() {
     GlideUtil.setImage(this@LoginActivity, R.drawable.login_back, login_back)
+    GlideUtil.setImage(this@LoginActivity, R.drawable.logo, logo)
   }
 
   fun setLoginAction() {
