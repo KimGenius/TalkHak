@@ -5,5 +5,5 @@ package kr.rinc.talkhak.talkhak.model
  */
 class Login {
   val id = ""
-  val nickname = ""
+  val name = ""
 }

@@ -8,6 +8,7 @@ import kr.rinc.talkhak.talkhak.adapter.AllListAdapter
 import kr.rinc.talkhak.talkhak.model.AllList
 import kr.rinc.talkhak.talkhak.network.RetroInit
 import kr.rinc.talkhak.talkhak.util.GlideUtil
+import kr.rinc.talkhak.talkhak.util.IntentUtil
 import kr.rinc.talkhak.talkhak.util.ToastUtil
 import retrofit2.Call
 import retrofit2.Callback
@@ -30,6 +31,9 @@ class ListAllActivity : BaseActivity() {
   }
 
   fun setBtnAction() {
+    writeBtn.setOnClickListener {
+      IntentUtil.moveActivity(this@ListAllActivity, AddListActivity::class.java)
+    }
     RetroInit.networkList.getAllList().enqueue(object : Callback<AllList> {
       override fun onFailure(call: Call<AllList>?, t: Throwable?) {
         ToastUtil.showShort(this@ListAllActivity, "서버 오류!")

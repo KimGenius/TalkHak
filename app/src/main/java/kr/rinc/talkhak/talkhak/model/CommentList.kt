@@ -6,6 +6,7 @@ package kr.rinc.talkhak.talkhak.model
 class CommentList {
   lateinit var list : List<Comment>
   inner class Comment {
+    val idx = 0
     val content = ""
     val writer = ""
     val check = 0

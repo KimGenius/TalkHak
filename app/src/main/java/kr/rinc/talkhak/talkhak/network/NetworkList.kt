@@ -22,7 +22,7 @@ interface NetworkList {
                @Field("pw") pw: String,
                @Field("token") token: Int = 0,
                @Field("name") name: String,
-               @Field("schoolCode") schoolCode: Int) : Call<ErrorModel>
+               @Field("schoolCode") schoolCode: Int): Call<ErrorModel>
 
   /*
    id: String(token > 0 ? 토큰값 : 진짜아이디)
@@ -33,18 +33,37 @@ interface NetworkList {
   @FormUrlEncoded
   fun login(@Field("id") id: String,
             @Field("pw") pw: String,
-            @Field("token") token: Int) : Call<Login>
+            @Field("token") token: Int): Call<Login>
 
   @GET("/")
-  fun getAllList() : Call<AllList>
+  fun getAllList(): Call<AllList>
 
   @GET("/board/{idx}")
-  fun getComment(@Path("idx") idx : Int) : Call<CommentList>
+  fun getComment(@Path("idx") idx: Int): Call<CommentList>
 
   @POST("/board/{idx}")
   @FormUrlEncoded
-  fun addComment(@Path("idx") idx : Int,
-                 @Field("content") content : String,
-                 @Field("writer") writer : String) : Call<ResponseBody>
+  fun addComment(@Path("idx") idx: Int,
+                 @Field("content") content: String,
+                 @Field("writer") writer: String): Call<ResponseBody>
 
+  @POST("/board/{idx}/{commentIdx}")
+  @FormUrlEncoded
+  fun checkComment(
+      @Field("id") id: String,
+      @Path("idx") idx: Int,
+      @Path("commentIdx") commentIdx: Int): Call<ResponseBody>
+
+  @POST("/write")
+  @FormUrlEncoded
+  fun addList(@Field("id") id : String,
+              @Field("writer") writer: String,
+              @Field("content") content: String) : Call<ErrorModel>
+  /*
+  id: String(token or 진짜아이디)
+    writer: String(닉네임)
+    title: String(제목)
+    content: String(내용)
+    subject: String(과목)
+   */
 }

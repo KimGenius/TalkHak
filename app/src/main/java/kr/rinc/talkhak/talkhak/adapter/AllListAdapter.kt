@@ -62,7 +62,7 @@ class AllListAdapter(activity: BaseActivity, gsonData: List<AllList.AllListModel
                   val layoutManager = GridLayoutManager(activity, 1)
                   layoutManager.orientation = GridLayoutManager.VERTICAL
                   activity.commentRecycler.layoutManager = layoutManager
-                  activity.commentRecycler.adapter = CommentAdapter(activity, this!!.list)
+                  activity.commentRecycler.adapter = CommentAdapter(item.idx, activity, this!!.list)
                 }
               } else {
                 ToastUtil.showShort(activity, "클라이언트 오류")
