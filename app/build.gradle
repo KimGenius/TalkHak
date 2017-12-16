@@ -35,5 +35,11 @@ dependencies {
     implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
     // push sdk를 사용하기 위해 필요.
     implementation group: project.KAKAO_SDK_GROUP, name: 'push', version: project.KAKAO_SDK_VERSION
-
+    //img lib
+    implementation 'com.github.bumptech.glide:glide:4.2.0'
+    //network lib
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    //network gson lib
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 }

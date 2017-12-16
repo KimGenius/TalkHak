@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="question">
+        <item>서비스문의</item>
+        <item>리뷰문의</item>
+        <item>제휴문의</item>
+        <item>업소문의</item>
+        <item>이벤트</item>
+        <item>기타</item>
+    </string-array>
+</resources>

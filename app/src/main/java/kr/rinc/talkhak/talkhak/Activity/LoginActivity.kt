@@ -13,6 +13,8 @@ import com.kakao.auth.ISessionCallback
 import com.kakao.auth.Session
 import com.kakao.util.exception.KakaoException
 import com.kakao.util.helper.log.Logger
+import inc.r.ens.util.GlideUtil
+import inc.r.ens.util.IntentUtil
 import kr.rinc.talkhak.talkhak.kakao.KakaoSignupActivity
 
 
@@ -25,6 +27,22 @@ class LoginActivity : BaseActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_login)
+    setLoginAction()
+    setImage()
+    setBtnAction()
+  }
+
+  fun setBtnAction() {
+    joinBtn.setOnClickListener {
+      IntentUtil.moveActivity(this@LoginActivity, JoinActivity::class.java)
+    }
+  }
+
+  fun setImage() {
+    GlideUtil.setImage(this@LoginActivity, R.drawable.login_back, login_back)
+  }
+
+  fun setLoginAction() {
     callbackManager = CallbackManager.Factory.create()
     faceLoginButton.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
       override fun onSuccess(loginResult: LoginResult) {
@@ -71,7 +89,7 @@ class LoginActivity : BaseActivity() {
 
   protected fun redirectSignupActivity() {
     val intent = Intent(this, KakaoSignupActivity::class.java)
-    Log.d("signup","redirectSignup")
+    Log.d("signup", "redirectSignup")
     startActivity(intent)
     finish()
   }
