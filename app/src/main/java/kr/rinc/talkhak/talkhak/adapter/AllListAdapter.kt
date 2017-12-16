@@ -9,26 +9,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import inc.r.ens.holder.GridViewHolder
-import inc.r.ens.util.GlideUtil
-import inc.r.ens.util.ToastUtil
 import kotlinx.android.synthetic.main.activity_all_list.*
 import kotlinx.android.synthetic.main.recycler_all_list.view.*
 import kr.rinc.talkhak.talkhak.Activity.BaseActivity
 import kr.rinc.talkhak.talkhak.R
+import kr.rinc.talkhak.talkhak.holder.GridViewHolder
 import kr.rinc.talkhak.talkhak.model.AllList
 import kr.rinc.talkhak.talkhak.model.CommentList
 import kr.rinc.talkhak.talkhak.network.RetroInit
+import kr.rinc.talkhak.talkhak.util.GlideUtil
+import kr.rinc.talkhak.talkhak.util.SharedUtil
+import kr.rinc.talkhak.talkhak.util.ToastUtil
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
-/**
- *
- * Created by young on 2017-09-02/오후 3:33
- * This Project is ENS
- */
 class AllListAdapter(activity: BaseActivity, gsonData: List<AllList.AllListModel>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   private val mGson: List<AllList.AllListModel> = gsonData
   private val activity = activity
@@ -79,9 +75,29 @@ class AllListAdapter(activity: BaseActivity, gsonData: List<AllList.AllListModel
         }
         toggle = !toggle
       }
-      activity.commentView.setOnClickListener {
+      activity.commentX.setOnClickListener {
         activity.commentView.startAnimation(slide_down)
         activity.commentView.visibility = View.GONE
+      }
+      Log.d("nickname",SharedUtil.getNickname(activity)+"asdf")
+      activity.commentSend.setOnClickListener {
+        RetroInit.networkList.addComment(item.idx, activity.commentEdit.text.toString(), SharedUtil.getNickname(activity))
+            .enqueue(object : Callback<ResponseBody> {
+          override fun onFailure(call: Call<ResponseBody>?, t: Throwable?) {
+            ToastUtil.showShort(activity, "서버 오류!")
+            t!!.printStackTrace()
+          }
+
+          override fun onResponse(call: Call<ResponseBody>?, response: Response<ResponseBody>?) {
+            if (response!!.isSuccessful) {
+              ToastUtil.showShort(activity, "등록되었습니다!")
+              activity.recreate()
+            } else {
+              ToastUtil.showShort(activity, "클라이언트 오류")
+            }
+          }
+
+        })
       }
     }
   }

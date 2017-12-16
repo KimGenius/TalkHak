@@ -6,14 +6,15 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import inc.r.ens.util.GlideUtil
-import inc.r.ens.util.IntentUtil
-import inc.r.ens.util.ToastUtil
 import kotlinx.android.synthetic.main.activity_join.*
 import kr.rinc.talkhak.talkhak.R
 import kr.rinc.talkhak.talkhak.model.ErrorModel
 import kr.rinc.talkhak.talkhak.model.SchoolList
 import kr.rinc.talkhak.talkhak.network.RetroInit
+import kr.rinc.talkhak.talkhak.util.GlideUtil
+import kr.rinc.talkhak.talkhak.util.IntentUtil
+import kr.rinc.talkhak.talkhak.util.SharedUtil
+import kr.rinc.talkhak.talkhak.util.ToastUtil
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -48,6 +49,9 @@ class JoinActivity : BaseActivity() {
           override fun onResponse(call: Call<ErrorModel>?, response: Response<ErrorModel>?) {
             if (response!!.code() == 200) {
               ToastUtil.showShort(this@JoinActivity, "회원가입에 성공하셨습니다!")
+              SharedUtil.setNickname(this@JoinActivity, nickname.text.toString())
+              SharedUtil.setUser(this@JoinActivity, id.text.toString())
+              SharedUtil.setSchool(this@JoinActivity, schoolList.selectedItem.toString())
               IntentUtil.finishMoveActivity(this@JoinActivity, MainActivity::class.java)
             } else {
               ToastUtil.showShort(this@JoinActivity, "입력 값을 확인해주세요")

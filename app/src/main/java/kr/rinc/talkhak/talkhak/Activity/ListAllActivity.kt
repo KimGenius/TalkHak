@@ -2,13 +2,13 @@ package kr.rinc.talkhak.talkhak.Activity
 
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
-import inc.r.ens.util.GlideUtil
-import inc.r.ens.util.ToastUtil
 import kotlinx.android.synthetic.main.activity_all_list.*
 import kr.rinc.talkhak.talkhak.R
 import kr.rinc.talkhak.talkhak.adapter.AllListAdapter
 import kr.rinc.talkhak.talkhak.model.AllList
 import kr.rinc.talkhak.talkhak.network.RetroInit
+import kr.rinc.talkhak.talkhak.util.GlideUtil
+import kr.rinc.talkhak.talkhak.util.ToastUtil
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

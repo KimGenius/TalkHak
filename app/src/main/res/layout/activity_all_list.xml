@@ -106,15 +106,30 @@
         android:layout_height="match_parent"
         android:background="#fff"
         android:visibility="gone">
-
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/commentX">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="X"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:background="@color/main"/>
+        </android.support.constraint.ConstraintLayout>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/commentRecycler"
+            android:layout_below="@id/commentX"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         </android.support.v7.widget.RecyclerView>
 
         <EditText
+            android:id="@+id/commentEdit"
             android:layout_width="300dp"
             android:layout_height="32dp"
             android:background="@drawable/login_edit_back"
@@ -127,6 +142,7 @@
             android:singleLine="true" />
 
         <Button
+            android:id="@+id/commentSend"
             android:layout_width="60dp"
             android:layout_height="32dp"
             android:background="@color/main"

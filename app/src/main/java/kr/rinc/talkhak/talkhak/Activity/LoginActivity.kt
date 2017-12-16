@@ -13,12 +13,13 @@ import com.kakao.auth.ISessionCallback
 import com.kakao.auth.Session
 import com.kakao.util.exception.KakaoException
 import com.kakao.util.helper.log.Logger
-import inc.r.ens.util.GlideUtil
-import inc.r.ens.util.IntentUtil
-import inc.r.ens.util.ToastUtil
 import kr.rinc.talkhak.talkhak.kakao.KakaoSignupActivity
+import kr.rinc.talkhak.talkhak.model.Login
 import kr.rinc.talkhak.talkhak.network.RetroInit
+import kr.rinc.talkhak.talkhak.util.GlideUtil
+import kr.rinc.talkhak.talkhak.util.IntentUtil
 import kr.rinc.talkhak.talkhak.util.SharedUtil
+import kr.rinc.talkhak.talkhak.util.ToastUtil
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
@@ -44,17 +45,22 @@ class LoginActivity : BaseActivity() {
     }
     loginBtn.setOnClickListener {
       RetroInit.networkList.login(id.text.toString(), pw.text.toString(), 0)
-          .enqueue(object : retrofit2.Callback<ResponseBody> {
-            override fun onFailure(call: Call<ResponseBody>?, t: Throwable?) {
+          .enqueue(object : retrofit2.Callback<Login> {
+            override fun onFailure(call: Call<Login>?, t: Throwable?) {
               ToastUtil.showShort(this@LoginActivity, "서버 오류!")
               t!!.printStackTrace()
             }
 
-            override fun onResponse(call: Call<ResponseBody>?, response: Response<ResponseBody>?) {
+            override fun onResponse(call: Call<Login>?, response: Response<Login>?) {
               if (response!!.code() == 200) {
-                SharedUtil.setUser(this@LoginActivity, id.text.toString())
-                ToastUtil.showShort(this@LoginActivity, "환영합니다!")
-                IntentUtil.finishMoveActivity(this@LoginActivity, MainActivity::class.java)
+                response.body().run {
+                  SharedUtil.setUser(this@LoginActivity, this!!.id)
+                  SharedUtil.setNickname(this@LoginActivity, this.nickname)
+                  ToastUtil.showShort(this@LoginActivity, "환영합니다!")
+                  IntentUtil.finishMoveActivity(this@LoginActivity, MainActivity::class.java)
+                }
+              } else if (response!!.code() == 400) {
+                ToastUtil.showShort(this@LoginActivity, "로그인 정보를 확인해주세요!")
               } else {
                 ToastUtil.showShort(this@LoginActivity, "클라이언트 오류!")
               }

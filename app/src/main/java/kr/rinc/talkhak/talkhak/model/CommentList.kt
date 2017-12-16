@@ -8,7 +8,7 @@ class CommentList {
   inner class Comment {
     val content = ""
     val writer = ""
-    val check = Int
+    val check = 0
     val create_date = ""
   }
 }

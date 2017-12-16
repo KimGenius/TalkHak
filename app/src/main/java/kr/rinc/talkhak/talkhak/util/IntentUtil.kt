@@ -1,13 +1,9 @@
-package inc.r.ens.util
+package kr.rinc.talkhak.talkhak.util
 
 import android.content.Intent
 import android.support.v4.app.FragmentActivity
 import android.support.v7.app.AppCompatActivity
 
-/**
- * Created by young on 2017-07-27/오후 6:43
- * This Project is ENS
- */
 object IntentUtil {
     fun moveActivity(activity: AppCompatActivity, cls: Class<*>) {
         activity.startActivity(Intent(activity, cls))

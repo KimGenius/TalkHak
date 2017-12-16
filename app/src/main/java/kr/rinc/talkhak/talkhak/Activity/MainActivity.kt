@@ -1,10 +1,10 @@
 package kr.rinc.talkhak.talkhak.Activity
 
 import android.os.Bundle
-import inc.r.ens.util.GlideUtil
-import inc.r.ens.util.IntentUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import kr.rinc.talkhak.talkhak.R
+import kr.rinc.talkhak.talkhak.util.GlideUtil
+import kr.rinc.talkhak.talkhak.util.IntentUtil
 
 class MainActivity : BaseActivity() {
 

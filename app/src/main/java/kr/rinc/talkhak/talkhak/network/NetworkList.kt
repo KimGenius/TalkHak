@@ -1,9 +1,6 @@
 package kr.rinc.talkhak.talkhak.network
 
-import kr.rinc.talkhak.talkhak.model.AllList
-import kr.rinc.talkhak.talkhak.model.CommentList
-import kr.rinc.talkhak.talkhak.model.ErrorModel
-import kr.rinc.talkhak.talkhak.model.SchoolList
+import kr.rinc.talkhak.talkhak.model.*
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -36,12 +33,18 @@ interface NetworkList {
   @FormUrlEncoded
   fun login(@Field("id") id: String,
             @Field("pw") pw: String,
-            @Field("token") token: Int) : Call<ResponseBody>
+            @Field("token") token: Int) : Call<Login>
 
   @GET("/")
   fun getAllList() : Call<AllList>
 
   @GET("/board/{idx}")
   fun getComment(@Path("idx") idx : Int) : Call<CommentList>
+
+  @POST("/board/{idx}")
+  @FormUrlEncoded
+  fun addComment(@Path("idx") idx : Int,
+                 @Field("content") content : String,
+                 @Field("writer") writer : String) : Call<ResponseBody>
 
 }
