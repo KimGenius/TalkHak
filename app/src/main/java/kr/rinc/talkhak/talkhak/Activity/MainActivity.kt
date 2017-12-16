@@ -2,6 +2,7 @@ package kr.rinc.talkhak.talkhak.Activity
 
 import android.os.Bundle
 import inc.r.ens.util.GlideUtil
+import inc.r.ens.util.IntentUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import kr.rinc.talkhak.talkhak.R
 
@@ -11,6 +12,13 @@ class MainActivity : BaseActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
     setImage()
+    setBtnAction()
+  }
+
+  fun setBtnAction() {
+    qList.setOnClickListener {
+      IntentUtil.moveActivity(this@MainActivity, ListAllActivity::class.java)
+    }
   }
 
   fun setImage() {

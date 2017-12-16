@@ -49,6 +49,7 @@
         <activity android:name=".Activity.MainActivity"/>
         <activity android:name=".Activity.JoinActivity"/>
         <activity android:name=".Activity.JoinTokenActivity"/>
+        <activity android:name=".Activity.ListAllActivity"/>
     </application>
 
 </manifest>

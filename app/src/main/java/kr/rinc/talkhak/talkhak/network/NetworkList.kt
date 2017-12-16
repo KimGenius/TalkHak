@@ -1,5 +1,6 @@
 package kr.rinc.talkhak.talkhak.network
 
+import kr.rinc.talkhak.talkhak.model.AllList
 import kr.rinc.talkhak.talkhak.model.ErrorModel
 import kr.rinc.talkhak.talkhak.model.SchoolList
 import okhttp3.ResponseBody
@@ -35,5 +36,8 @@ interface NetworkList {
   fun login(@Field("id") id: String,
             @Field("pw") pw: String,
             @Field("token") token: Int) : Call<ResponseBody>
+
+  @GET("/")
+  fun getAllList() : Call<AllList>
 
 }
