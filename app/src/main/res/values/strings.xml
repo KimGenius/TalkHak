@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TalkHak</string>
+    <string name="facebook_app_id">154787335290881</string>
+    <string name="fb_login_protocol_scheme">fb154787335290881</string>
 </resources>
