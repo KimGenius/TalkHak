@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -53,10 +54,10 @@
         android:layout_below="@id/c1">
 
         <TextView
+            android:id="@+id/text"
             android:layout_width="280dp"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="현재 채택된 문제 수는 N개 입니다"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -64,8 +65,9 @@
             app:layout_constraintVertical_bias="0.3" />
 
         <Button
+            android:id="@+id/injung"
             android:layout_width="240dp"
-            android:layout_height="wrap_content"
+            android:layout_height="46dp"
             android:background="@color/main"
             android:text="인증서 출력"
             android:textColor="#fff"

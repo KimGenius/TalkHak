@@ -58,6 +58,7 @@ interface NetworkList {
   @FormUrlEncoded
   fun addList(@Field("id") id : String,
               @Field("writer") writer: String,
+              @Field("subject") subject: String,
               @Field("content") content: String) : Call<ErrorModel>
   /*
   id: String(token or 진짜아이디)
@@ -65,5 +66,18 @@ interface NetworkList {
     title: String(제목)
     content: String(내용)
     subject: String(과목)
+   */
+  @GET("/checkList")
+  fun getCheckList(@Query("writer") writer : String) : Call<Count>
+
+  @POST("/pdf")
+  @FormUrlEncoded
+  fun getPdf(@Field("schoolName") schoolName : String,
+             @Field("name") name : String,
+             @Field("id") id : String) : Call<ResponseBody>
+  /*
+  schoolName: String(학교 이름)
+    name: String(이름)
+    id: String(이름)
    */
 }

@@ -19,6 +19,9 @@ class MainActivity : BaseActivity() {
     qList.setOnClickListener {
       IntentUtil.moveActivity(this@MainActivity, ListAllActivity::class.java)
     }
+    user.setOnClickListener {
+      IntentUtil.moveActivity(this@MainActivity, MyPageActivity::class.java)
+    }
   }
 
   fun setImage() {

@@ -56,6 +56,7 @@ class LoginActivity : BaseActivity() {
                 response.body().run {
                   SharedUtil.setUser(this@LoginActivity, this!!.id)
                   SharedUtil.setNickname(this@LoginActivity, this.name)
+
                   ToastUtil.showShort(this@LoginActivity, "환영합니다!")
                   IntentUtil.finishMoveActivity(this@LoginActivity, MainActivity::class.java)
                 }
