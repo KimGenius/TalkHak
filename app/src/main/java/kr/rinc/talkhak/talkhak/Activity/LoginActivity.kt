@@ -13,6 +13,7 @@ import com.kakao.auth.ISessionCallback
 import com.kakao.auth.Session
 import com.kakao.util.exception.KakaoException
 import com.kakao.util.helper.log.Logger
+import kr.rinc.talkhak.talkhak.kakao.KakaoSignupActivity
 
 
 /**

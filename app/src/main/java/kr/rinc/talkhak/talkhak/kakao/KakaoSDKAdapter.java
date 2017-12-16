@@ -1,4 +1,4 @@
-package kr.rinc.talkhak.talkhak.Activity;
+package kr.rinc.talkhak.talkhak.kakao;
 
 import android.app.Activity;
 import android.content.Context;

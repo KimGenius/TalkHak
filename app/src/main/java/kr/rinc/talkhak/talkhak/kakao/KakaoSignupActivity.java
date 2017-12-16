@@ -1,4 +1,4 @@
-package kr.rinc.talkhak.talkhak.Activity;
+package kr.rinc.talkhak.talkhak.kakao;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.MeResponseCallback;
 import com.kakao.usermgmt.response.model.UserProfile;
 import com.kakao.util.helper.log.Logger;
+
+import kr.rinc.talkhak.talkhak.Activity.LoginActivity;
+import kr.rinc.talkhak.talkhak.Activity.MainActivity;
 
 /**
  * Created by geniusk on 2017. 12. 16..
