@@ -26,6 +26,7 @@
         app:layout_constraintVertical_bias="0.16" />
 
     <EditText
+        android:id="@+id/id"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:background="@drawable/login_edit_back"
@@ -42,6 +43,7 @@
         app:layout_constraintVertical_bias="0.43" />
 
     <EditText
+        android:id="@+id/pw"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:background="@drawable/login_edit_back"
@@ -58,6 +60,7 @@
         app:layout_constraintVertical_bias="0.53" />
 
     <Button
+        android:id="@+id/loginBtn"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:background="@color/main"

@@ -36,6 +36,9 @@ class LoginActivity : BaseActivity() {
     joinBtn.setOnClickListener {
       IntentUtil.moveActivity(this@LoginActivity, JoinActivity::class.java)
     }
+    loginBtn.setOnClickListener {
+
+    }
   }
 
   fun setImage() {
