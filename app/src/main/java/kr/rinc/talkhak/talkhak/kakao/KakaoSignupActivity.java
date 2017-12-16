@@ -12,8 +12,10 @@ import com.kakao.usermgmt.callback.MeResponseCallback;
 import com.kakao.usermgmt.response.model.UserProfile;
 import com.kakao.util.helper.log.Logger;
 
+import kr.rinc.talkhak.talkhak.Activity.JoinTokenActivity;
 import kr.rinc.talkhak.talkhak.Activity.LoginActivity;
 import kr.rinc.talkhak.talkhak.Activity.MainActivity;
+import kr.rinc.talkhak.talkhak.util.SharedUtil;
 
 /**
  * Created by geniusk on 2017. 12. 16..
@@ -65,9 +67,9 @@ public class KakaoSignupActivity extends Activity {
             public void onSuccess(UserProfile userProfile) {  //성공 시 userProfile 형태로 반환
                 String kakaoID = String.valueOf(userProfile.getId()); // userProfile에서 ID값을 가져옴
                 String kakaoNickname = userProfile.getNickname();     // Nickname 값을 가져옴
-                Log.d("UserProfile : " , userProfile.toString());
                 Log.d("UserProfile : " , kakaoID);
                 Log.d("UserProfile : " , kakaoNickname);
+                SharedUtil.INSTANCE.setToken(getApplicationContext(), kakaoID,2);
                 redirectMainActivity(); // 로그인 성공시 MainActivity로
             }
         });
@@ -75,7 +77,7 @@ public class KakaoSignupActivity extends Activity {
 
     private void redirectMainActivity() {
         Log.d("kakao","main");
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, JoinTokenActivity.class));
         finish();
     }
     protected void redirectLoginActivity() {

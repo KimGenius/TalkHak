@@ -74,6 +74,8 @@ class LoginActivity : BaseActivity() {
       override fun onSuccess(loginResult: LoginResult) {
         // App code
         Log.d("login", loginResult.accessToken.token)
+        SharedUtil.setToken(this@LoginActivity, loginResult.accessToken.token, 1)
+        IntentUtil.moveActivity(this@LoginActivity, JoinTokenActivity::class.java)
       }
 
       override fun onCancel() {

@@ -48,6 +48,7 @@
         <activity android:name=".kakao.KakaoSignupActivity"/>
         <activity android:name=".Activity.MainActivity"/>
         <activity android:name=".Activity.JoinActivity"/>
+        <activity android:name=".Activity.JoinTokenActivity"/>
     </application>
 
 </manifest>

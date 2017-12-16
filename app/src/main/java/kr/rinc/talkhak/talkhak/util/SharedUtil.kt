@@ -13,12 +13,15 @@ object SharedUtil {
   private val IDX = "idx"
   private val ID = "id"
   private val NICKNAME = "nickname"
+  private val TOKENIDX = "tokenidx"
 
   fun getToken(ctx: Context): String = getSharedPreferences(ctx).getString(TOKEN, "")
+  fun getTokenIdx(ctx: Context): String = getSharedPreferences(ctx).getString(TOKENIDX, "")
 
-  fun setToken(ctx: Context, token: String) {
+  fun setToken(ctx: Context, token: String, tokenIdx: Int) {
     val editor = getSharedPreferences(ctx).edit()
     editor.putString(TOKEN, token)
+    editor.putString(TOKENIDX, tokenIdx.toString())
     editor.apply()
   }
 
