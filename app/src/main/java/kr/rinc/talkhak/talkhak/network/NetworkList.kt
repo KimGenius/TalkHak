@@ -2,6 +2,7 @@ package kr.rinc.talkhak.talkhak.network
 
 import kr.rinc.talkhak.talkhak.model.ErrorModel
 import kr.rinc.talkhak.talkhak.model.SchoolList
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -33,6 +34,6 @@ interface NetworkList {
   @FormUrlEncoded
   fun login(@Field("id") id: String,
             @Field("pw") pw: String,
-            @Field("token") token: String) : Call<ErrorModel>
+            @Field("token") token: Int) : Call<ResponseBody>
 
 }
