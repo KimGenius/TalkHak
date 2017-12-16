@@ -16,4 +16,7 @@ object GlideUtil {
     fun setImage(ctx: Context, id: Int, image: ImageView) {
         Glide.with(ctx).load(id).into(image)
     }
+    fun setImage(ctx: Context, id: String, image: ImageView) {
+        Glide.with(ctx).load(id).into(image)
+    }
 }

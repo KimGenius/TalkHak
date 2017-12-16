@@ -1,9 +1,12 @@
 package kr.rinc.talkhak.talkhak.model
 
+import com.google.gson.annotations.SerializedName
+
 /**
  * Created by geniusk on 2017. 12. 17..
  */
 class AllList {
+  @SerializedName("list")
   lateinit var allListModel : List<AllListModel>
   inner class AllListModel {
     val idx = 0

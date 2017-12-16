@@ -49,5 +49,6 @@ class ListAllActivity : BaseActivity() {
         }
       }
     })
+    backBtn.setOnClickListener { finish() }
   }
 }

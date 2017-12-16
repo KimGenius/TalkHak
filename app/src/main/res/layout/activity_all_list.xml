@@ -37,7 +37,7 @@
             android:gravity="center_vertical"
             android:text="글쓰기"
             android:textColor="@color/main"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.96"
@@ -61,7 +61,8 @@
             android:layout_weight="25"
             android:gravity="center"
             android:text="전체보기"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="16dp" />
 
         <TextView
             android:layout_width="1dp"
@@ -69,7 +70,8 @@
             android:layout_weight="25"
             android:gravity="center"
             android:text="학교별"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="16dp" />
 
         <TextView
             android:layout_width="1dp"
@@ -77,7 +79,8 @@
             android:layout_weight="25"
             android:gravity="center"
             android:text="과목별"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="16dp" />
 
         <TextView
             android:layout_width="1dp"
@@ -85,7 +88,8 @@
             android:layout_weight="25"
             android:gravity="center"
             android:text="채택여부"
-            android:textColor="#fff" />
+            android:textColor="#fff"
+            android:textSize="16dp" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
@@ -95,4 +99,40 @@
         android:layout_below="@id/c2">
 
     </android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:id="@+id/commentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:visibility="gone">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/commentRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="32dp"
+            android:background="@drawable/login_edit_back"
+            android:hint="댓글을 입력하세요"
+            android:textColor="#5d5d5d"
+            android:textColorHint="#5d5d5d"
+            android:paddingLeft="10dp"
+            android:textSize="12sp"
+            android:layout_alignParentBottom="true"
+            android:singleLine="true" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="32dp"
+            android:background="@color/main"
+            android:textColor="#fff"
+            android:text="보내기"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="300dp" />
+    </RelativeLayout>
 </RelativeLayout>

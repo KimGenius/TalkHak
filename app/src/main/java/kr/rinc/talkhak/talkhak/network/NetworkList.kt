@@ -1,6 +1,7 @@
 package kr.rinc.talkhak.talkhak.network
 
 import kr.rinc.talkhak.talkhak.model.AllList
+import kr.rinc.talkhak.talkhak.model.CommentList
 import kr.rinc.talkhak.talkhak.model.ErrorModel
 import kr.rinc.talkhak.talkhak.model.SchoolList
 import okhttp3.ResponseBody
@@ -39,5 +40,8 @@ interface NetworkList {
 
   @GET("/")
   fun getAllList() : Call<AllList>
+
+  @GET("/board/{idx}")
+  fun getComment(@Path("idx") idx : Int) : Call<CommentList>
 
 }

@@ -50,6 +50,7 @@
         android:background="@drawable/login_edit_back"
         android:gravity="center_vertical"
         android:hint="비밀번호"
+        android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:singleLine="true"
         android:textColor="#fff"

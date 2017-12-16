@@ -28,28 +28,44 @@
                 app:layout_constraintVertical_bias="0.076" />
 
             <TextView
+                android:id="@+id/writer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
                 android:text="김영배"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.06" />
+
+            <TextView
+                android:id="@+id/subject"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:background="@color/main"
+                android:gravity="center"
+                android:text="국어"
+                android:textColor="#fff"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.06" />
 
             <TextView
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
                 android:text="2017-10-04"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.25"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.15" />
 
             <TextView
+                android:id="@+id/content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이부분이 너무 어려워요 ㅠㅠ 도와주세요!!"
@@ -60,12 +76,14 @@
                 app:layout_constraintVertical_bias="0.25" />
 
             <ImageView
+                android:id="@+id/listImg"
                 android:layout_width="200dp"
-                android:layout_height="100dp"
+                android:layout_height="90dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.6" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -76,12 +94,13 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.8" />
+                app:layout_constraintVertical_bias="0.81" />
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="290dp"
             android:layout_height="40dp"
+            android:background="@color/main"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -99,11 +118,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/commentBtn"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="39dp"
                 android:gravity="center"
                 android:text="댓글달기"
-                android:textColor="#594747" />
+                android:textColor="#fff" />
         </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 </RelativeLayout>

@@ -17,7 +17,7 @@ class SplashActivity : BaseActivity() {
     Log.d("test", "ㅁㄴㅇㄹㄴㅁㅇㄹ"+SharedUtil.getToken(this@SplashActivity))
     Log.d("test", "ㅁㄴㅇㄹㄴㅁㅇㄹ"+SharedUtil.getToken(this@SplashActivity).isEmpty().toString())
     Handler().postDelayed({
-      if (SharedUtil.getToken(this@SplashActivity) == "") {
+      if (SharedUtil.getToken(this@SplashActivity) == "" && SharedUtil.getId(this@SplashActivity) == "") {
         IntentUtil.finishMoveActivity(this@SplashActivity, LoginActivity::class.java)
       } else {
         IntentUtil.finishMoveActivity(this@SplashActivity, MainActivity::class.java)
